@@ -1,0 +1,27 @@
+#!/usr/bin/python2.4
+# Copyright 2010 Google Inc. All Rights Reserved.
+# Author: jrand@google.com (John Randolph)
+
+"""Test file docstring."""
+
+def HelloWorld():
+  """Print Hello World.
+
+  Args:
+    gratuitous multi line comment
+  """
+  unused = """
+I'm a long string
+but not a
+docstring.
+"""
+
+unused2 = """I'm a long string
+""" + """ with multiple parts""" + """ starting
+on the same line."""
+
+  print "Hello World!"   # stdout
+
+
+HelloWorld()
+

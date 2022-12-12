@@ -1,0 +1,23 @@
+{# Copyright 2011 Google Inc. All Rights Reserved. #}
+
+{% comment %}
+  UI for editing a code review comment on a migration.
+  Accepts one argument, "comment",
+  which is the comment to render controls for.
+
+  Author: nicksantos@google.com (Nick Santos)
+{% endcomment %}
+
+<div class="goog-inline-block moe-save-area"
+     action="/api/edit_comment?migration_id={{ migration.migration_id }}&project_name={{ migration.project.name }}">
+<input type="hidden"
+     value="{{ comment.comment_id }}" name="comment_id_{{ forloop.counter0 }}">
+<div class="moe-help-box">
+  <div><b>Author:</b> {{ comment.author }}</div>
+  <div><b>Date:</b> {{ comment.date }}</div>
+  <div><b>File:</b> {{ comment.file }}:{{ comment.lineno }}</div><br/>
+  <textarea name="comment_text_{{ forloop.counter0 }}"
+      cols=60 rows=6>{{ comment.text }}</textarea><br/>
+  <span class="moe-save-area-feedback"></span>
+</div>
+</div>

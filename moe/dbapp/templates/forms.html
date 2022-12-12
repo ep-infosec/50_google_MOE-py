@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Project Editor{% endblock %}
+
+{% block body %}
+
+
+<div class="g-section g-tpl-33-67 g-split">
+<div class="g-unit g-first">
+
+{% if not project_name %}
+<h2>Create/Update a project:</h2>
+<form action="/api/update_project?out=html" method="post">
+  <div>Project Name: <input type="text" name="project_name"></div>
+  <div><input type="submit" value="create"></div>
+</form>
+{% endif %}
+
+<p>
+{% include "note_equivalence.html" %}
+<p>
+{% include "note_import_migration.html" %}
+<p>
+{% include "note_export_migration.html" %}
+
+</div>
+</div>
+
+{% endblock body %}
